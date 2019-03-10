@@ -8,7 +8,7 @@ package com.soft1841.jpt.day1;
  */
 public class TestShape {
     public static void main(String[] args) {
-        Circle circle = new Circle(5);
+        Circle circle = new Circle(2.5);
         circle.name = "圆形";
         System.out.println(circle.name + "面积：" + circle.getArea());
         Rectangle1 rectangle = new Rectangle1(5, 5);

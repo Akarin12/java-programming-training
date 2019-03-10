@@ -10,7 +10,9 @@ public class GoShopping {
         market.name = "乐购";
         market.goods = "七匹狼西服";
         market.shop();
+        market =new TaobaoMarket();
         market.name = "淘宝";
         market.goods="内存条";
+        market.shop();
     }
 }

@@ -1,10 +1,10 @@
-package com.soft1841.jpt.day12;
+package com.soft1841.jpt.day1;
 
 /**
- * 画图形类
+ * 画图形接口
  *
  * @author Yue Tang
- * 2018.3.10
+ * 2019.3.10
  */
 interface DrawImage {
     public void draw();

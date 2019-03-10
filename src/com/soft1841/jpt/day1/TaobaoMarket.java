@@ -1,4 +1,4 @@
-package com.soft1841.jpt.day11;
+package com.soft1841.jpt.day1;
 
 /**
  * 淘宝类

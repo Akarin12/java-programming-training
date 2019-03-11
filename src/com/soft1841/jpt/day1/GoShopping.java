@@ -4,6 +4,7 @@ package com.soft1841.jpt.day1;
  * @author Yue Tang
  * 2019.3.10
  */
+
 public class GoShopping {
     public static void main(String[] args) {
         Market market = new WallMarket();

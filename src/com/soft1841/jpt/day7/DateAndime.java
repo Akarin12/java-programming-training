@@ -1,4 +1,4 @@
-package com.soft1841.jpt;
+package com.soft1841.jpt.day7;
 
 import java.time.*;
 import java.time.format.DateTimeFormatter;

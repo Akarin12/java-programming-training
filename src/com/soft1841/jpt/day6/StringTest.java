@@ -1,4 +1,4 @@
-package com.soft1841.jpt;
+package com.soft1841.jpt.day6;
 
 /**
  * String、StringBuffer、StringBuilder的比较

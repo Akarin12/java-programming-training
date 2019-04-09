@@ -16,7 +16,7 @@ class GetImgByNet extends Thread {
     public void run() {
         try {
             //新建一个URL对象
-            URL url = new URL("https://cdn2.jianshu.io/assets/web/nav-logo-4c7bbafe27adc892f3046e6978459bac.png");
+            URL url = new URL("https://upload-images.jianshu.io/upload_images/14257810-1e58190ecf60e2dc.gif");
             //打开链接
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             //设置请求方式为"GET"

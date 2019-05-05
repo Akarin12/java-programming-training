@@ -12,12 +12,13 @@ import java.io.*;
 import java.net.URL;
 
 public class WTFwork extends JFrame implements ActionListener {
-    private JButton osBtn, newBtn;
+    private JButton osBtn, newBtn, musicBtn,pauseBtn;
     private JFileChooser fileChooser;
     private JPanel bottomPanel;
     private JTextArea textArea;
     private JScrollPane scrollPane;
     private JTextField textField;
+    private Thread thread;
 
     public WTFwork() {
         Init();
@@ -25,27 +26,40 @@ public class WTFwork extends JFrame implements ActionListener {
         setSize(new Dimension(1000, 700));
         setLocationRelativeTo(null);
         setVisible(true);
-        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
     public void Init() {
         textField = new JTextField();
         GhostText ghostText = new GhostText(textField, "输入网址,仅支持简书");
         textField.setPreferredSize(new Dimension(300, 30));
+
+        musicBtn = new JButton("来点音乐");
+        pauseBtn = new JButton("停");
         newBtn = new JButton("连接");
         osBtn = new JButton("另存为");
         bottomPanel = new JPanel();
+
         bottomPanel.add(osBtn);
         bottomPanel.add(newBtn);
         bottomPanel.add(textField);
+        bottomPanel.add(musicBtn);
+        bottomPanel.add(pauseBtn);
+
         osBtn.addActionListener(this);
         newBtn.addActionListener(this);
+        musicBtn.addActionListener(this);
+        pauseBtn.addActionListener(this);
         bottomPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
         add(bottomPanel, BorderLayout.NORTH);
         textArea = new JTextArea();
         textArea.setLineWrap(true);
         scrollPane = new JScrollPane(textArea);
         add(scrollPane, BorderLayout.CENTER);
+
+        PlayerStart playerStart = new PlayerStart();
+        playerStart.setMusicBtn(musicBtn);
+        thread = new Thread(playerStart);
     }
 
     public static void main(String[] args) {
@@ -103,6 +117,14 @@ public class WTFwork extends JFrame implements ActionListener {
                 JOptionPane.showMessageDialog(null, "请输入有效的URL");
                 url = null;
             }
+        }
+
+        if (e.getSource() == musicBtn) {
+            thread.start();
+        }
+
+        if (e.getSource() == pauseBtn){
+            thread.stop();
         }
 
     }

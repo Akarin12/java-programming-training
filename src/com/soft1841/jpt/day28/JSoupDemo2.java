@@ -19,20 +19,24 @@ public class JSoupDemo2 {
             File file;
             InputStream in;
             OutputStream out;
-            String url ="http://expo.bootcss.com/";
+            String url ="https://www.jianshu.com/p/610c99da01e7";
             Connection connection = Jsoup.connect(url);
             Document document = connection.get();
-            Element elementDiv = document.getElementById("post-list");
-            Elements elements = elementDiv.getElementsByClass("col-xs-12");
+//            Element elementDiv = document.getElementsByTag("")
+            Elements elements = document.getElementsByClass("show-content");
             System.out.println(elements.size());
             for (Element e:elements) {
-                Element imgElement = e.child(0).child(1).child(0).child(0);
+                Element imgElement = e;
                 UUID uuid = UUID.randomUUID();
-                String imgName = uuid + ".jpg";
-                file = new File("F:/22/" +imgName);
-                URL url1 = new URL(imgElement.attr("src"));
+
+                URL url1 = new URL(imgElement.attr("data-original-src"));
+                System.out.println(url1);
                 URLConnection uc = url1.openConnection();
                 in = uc.getInputStream();
+
+                String imgName = uuid + ".jpg";
+                file = new File("F:/22/" +imgName);
+
                 out = new FileOutputStream(file);
                 int temp;
                 byte[] buf = new byte[1024];

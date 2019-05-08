@@ -6,7 +6,7 @@ import java.net.Socket;
 
 public class Server {
     public static void main (String[] args) throws IOException {
-        ServerSocket ss=new ServerSocket(10086);
+        ServerSocket ss=new ServerSocket(11451);
         System.out.println("服务器启动，端口号:"+ss.getLocalPort());
         while (true){
             Socket socket=ss.accept();

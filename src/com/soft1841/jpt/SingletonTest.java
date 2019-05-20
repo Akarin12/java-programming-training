@@ -25,6 +25,6 @@ class Singleton {
     }
     //成员方法，显示消息
     public void showMessage(){
-        System.out.println("hello,world!");
+        System.out.println("I am inevitable");
     }
 }
